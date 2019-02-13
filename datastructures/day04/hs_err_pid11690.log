@@ -1,0 +1,697 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fb162d6f1d9, pid=11690, tid=0x00007fb1640d9700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_191-b12) (build 1.8.0_191-8u191-b12-2ubuntu0.16.04.1-b12)
+# Java VM: OpenJDK 64-Bit Server VM (25.191-b12 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x9d71d9]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb15c00f000):  JavaThread "main" [_thread_in_vm, id=11693, stack(0x00007fb163fd9000,0x00007fb1640da000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000000
+
+Registers:
+RAX=0x00000000000003d8, RBX=0x00007fb15c00f000, RCX=0x0000000000000000, RDX=0x00007fb15c00fb98
+RSP=0x00007fb1640d6670, RBP=0x00007fb1640d6680, RSI=0x0000000000000000, RDI=0x0000000000000000
+R8 =0x0000000000000001, R9 =0x00000000000000b2, R10=0x000000000000000b, R11=0x000000000000000a
+R12=0x00007fb1640d6960, R13=0x00000007c01011c8, R14=0x0000000000000000, R15=0x00007fb15c00f000
+RIP=0x00007fb162d6f1d9, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fb1640d6670)
+0x00007fb1640d6670:   00007fb15c00f000 00007fb1640d6960
+0x00007fb1640d6680:   00007fb1640d6830 00007fb162b23382
+0x00007fb1640d6690:   00007fb1640d6730 00007fb100000001
+0x00007fb1640d66a0:   00007fb1000000b2 00007fb162b24b02
+0x00007fb1640d66b0:   0000000000000000 0000000000000000
+0x00007fb1640d66c0:   00007fb1640d66e0 00007fb162d229cc
+0x00007fb1640d66d0:   00007fb14a15a480 0000000000000001
+0x00007fb1640d66e0:   00007fb1640d6710 00007fb162d242bb
+0x00007fb1640d66f0:   00007fb15c00c710 00007fb15c00f7b0
+0x00007fb1640d6700:   00007fb15c00f7c0 00007fb15c00fb98
+0x00007fb1640d6710:   00000000000003d8 00007fb162bdf85e
+0x00007fb1640d6720:   00007fb1631fa510 00007fb163f342f0
+0x00007fb1640d6730:   0000000000000003 000000000000000e
+0x00007fb1640d6740:   0000000000000000 51c6e6bfffea9d00
+0x00007fb1640d6750:   00007fb1640d67c0 00007fb14a89fb80
+0x00007fb1640d6760:   00007fb1640d67b0 00007fb16285e533
+0x00007fb1640d6770:   00007fb1640d68d0 000000b700000000
+0x00007fb1640d6780:   00007fb1640d67a0 00007fb15c00c6b0
+0x00007fb1640d6790:   00007fb14a89fb80 00000000000000b7
+0x00007fb1640d67a0:   00007fb14a15a480 51c6e6bfffea9d00
+0x00007fb1640d67b0:   00007fb1640d6810 00007fb14a89e498
+0x00007fb1640d67c0:   00007fb15c00f000 00007fb15c00c6b0
+0x00007fb1640d67d0:   0000000000000000 00007fb15c00f000
+0x00007fb1640d67e0:   00007fb1640d6850 00007fb162853da2
+0x00007fb1640d67f0:   00007fb15c00f000 51c6e6bfffea9d00
+0x00007fb1640d6800:   00007fb14a89e498 00007fb14a89e498
+0x00007fb1640d6810:   00007fb1640d6960 000000000000053a
+0x00007fb1640d6820:   0000000000000000 00007fb15c00f000
+0x00007fb1640d6830:   00007fb1640d68d0 00007fb162b237a5
+0x00007fb1640d6840:   0000000000000001 0000000000000001
+0x00007fb1640d6850:   00007fb15c00f000 00007fb162b23605
+0x00007fb1640d6860:   00007fb15c00f1c0 00007fb1640d68d0 
+
+Instructions: (pc=0x00007fb162d6f1d9)
+0x00007fb162d6f1b9:   ff 66 0f 1f 44 00 00 be 0d 00 00 00 e9 56 fd ff
+0x00007fb162d6f1c9:   ff 66 0f 1f 44 00 00 55 31 f6 48 89 e5 41 54 53
+0x00007fb162d6f1d9:   44 0f b7 27 48 89 fb 41 8d 7c 24 01 48 63 ff e8
+0x00007fb162d6f1e9:   03 00 f8 ff 0f b7 13 44 39 e2 49 0f 4f d4 85 d2 
+
+Register to memory mapping:
+
+RAX=0x00000000000003d8 is an unknown value
+RBX=0x00007fb15c00f000 is a thread
+RCX=0x0000000000000000 is an unknown value
+RDX=0x00007fb15c00fb98 is an unknown value
+RSP=0x00007fb1640d6670 is pointing into the stack for thread: 0x00007fb15c00f000
+RBP=0x00007fb1640d6680 is pointing into the stack for thread: 0x00007fb15c00f000
+RSI=0x0000000000000000 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000001 is an unknown value
+R9 =0x00000000000000b2 is an unknown value
+R10=0x000000000000000b is an unknown value
+R11=0x000000000000000a is an unknown value
+R12=0x00007fb1640d6960 is pointing into the stack for thread: 0x00007fb15c00f000
+R13=0x00000007c01011c8 is pointing into metadata
+R14=0x0000000000000000 is an unknown value
+R15=0x00007fb15c00f000 is a thread
+
+
+Stack: [0x00007fb163fd9000,0x00007fb1640da000],  sp=0x00007fb1640d6670,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x9d71d9]
+V  [libjvm.so+0x78b382]
+V  [libjvm.so+0x78b7a5]
+V  [libjvm.so+0x657ae1]
+j  MyHashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+58
+j  MyHashMapTest.testResize()V+21
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x666f7b]
+V  [libjvm.so+0x943946]
+V  [libjvm.so+0x94565f]
+V  [libjvm.so+0x6b2959]  JVM_InvokeMethod+0x119
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.platform.commons.util.ReflectionUtils.invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+41
+j  org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;Lorg/junit/jupiter/api/extension/ExtensionContext;Lorg/junit/jupiter/engine/extension/ExtensionRegistry;)Ljava/lang/Object;+32
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(Lorg/junit/jupiter/api/extension/ExtensionContext;Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;)V+24
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda$212.execute()V+12
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)V+21
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;+44
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+79
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda$153.accept(Ljava/lang/Object;)V+4
+j  java.util.ArrayList.forEach(Ljava/util/function/Consumer;)V+47
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(Ljava/util/List;)V+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+116
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda$153.accept(Ljava/lang/Object;)V+4
+j  java.util.ArrayList.forEach(Ljava/util/function/Consumer;)V+47
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(Ljava/util/List;)V+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+116
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(Lorg/junit/platform/engine/support/hierarchical/HierarchicalTestExecutorService$TestTask;)Ljava/util/concurrent/Future;+1
+j  org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute()Ljava/util/concurrent/Future;+74
+j  org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(Lorg/junit/platform/engine/ExecutionRequest;)V+31
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/engine/TestEngine;Lorg/junit/platform/engine/ExecutionRequest;)V+2
+j  org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(Lorg/junit/platform/launcher/core/InternalTestPlan;Lorg/junit/platform/launcher/core/Root;Lorg/junit/platform/engine/ConfigurationParameters;Lorg/junit/platform/launcher/TestExecutionListener;)V+76
+j  org.junit.platform.launcher.core.DefaultLauncher$$Lambda$124.accept(Ljava/lang/Object;)V+20
+j  org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(Lorg/junit/platform/engine/ConfigurationParameters;Lorg/junit/platform/launcher/core/TestExecutionListenerRegistry;Ljava/util/function/Consumer;)V+43
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/launcher/core/InternalTestPlan;[Lorg/junit/platform/launcher/TestExecutionListener;)V+33
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/launcher/LauncherDiscoveryRequest;[Lorg/junit/platform/launcher/TestExecutionListener;)V+33
+j  com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs([Ljava/lang/String;Ljava/lang/String;IZ)I+240
+j  com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(Lcom/intellij/rt/execution/junit/IdeaTestRunner;[Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;IZ)I+22
+j  com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart([Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)I+116
+j  com.intellij.rt.execution.junit.JUnitStarter.main([Ljava/lang/String;)V+116
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x666f7b]
+V  [libjvm.so+0x688c6e]
+V  [libjvm.so+0x68b59f]
+C  [libjli.so+0x3552]
+C  [libjli.so+0x74ed]
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  MyHashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+58
+j  MyHashMapTest.testResize()V+21
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.platform.commons.util.ReflectionUtils.invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+41
+j  org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;Lorg/junit/jupiter/api/extension/ExtensionContext;Lorg/junit/jupiter/engine/extension/ExtensionRegistry;)Ljava/lang/Object;+32
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(Lorg/junit/jupiter/api/extension/ExtensionContext;Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;)V+24
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda$212.execute()V+12
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)V+21
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)Lorg/junit/jupiter/engine/execution/JupiterEngineExecutionContext;+44
+j  org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$DynamicTestExecutor;)Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+79
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda$153.accept(Ljava/lang/Object;)V+4
+j  java.util.ArrayList.forEach(Ljava/util/function/Consumer;)V+47
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(Ljava/util/List;)V+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+116
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda$153.accept(Ljava/lang/Object;)V+4
+j  java.util.ArrayList.forEach(Ljava/util/function/Consumer;)V+47
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(Ljava/util/List;)V+6
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5()V+116
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$149.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+15
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$148.invoke(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;)V+5
+j  org.junit.platform.engine.support.hierarchical.Node.around(Lorg/junit/platform/engine/support/hierarchical/EngineExecutionContext;Lorg/junit/platform/engine/support/hierarchical/Node$Invocation;)V+2
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8()V+14
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda$147.execute()V+4
+j  org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(Lorg/junit/platform/engine/support/hierarchical/ThrowableCollector$Executable;)V+1
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively()V+31
+j  org.junit.platform.engine.support.hierarchical.NodeTestTask.execute()V+55
+j  org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(Lorg/junit/platform/engine/support/hierarchical/HierarchicalTestExecutorService$TestTask;)Ljava/util/concurrent/Future;+1
+j  org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute()Ljava/util/concurrent/Future;+74
+j  org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(Lorg/junit/platform/engine/ExecutionRequest;)V+31
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/engine/TestEngine;Lorg/junit/platform/engine/ExecutionRequest;)V+2
+j  org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(Lorg/junit/platform/launcher/core/InternalTestPlan;Lorg/junit/platform/launcher/core/Root;Lorg/junit/platform/engine/ConfigurationParameters;Lorg/junit/platform/launcher/TestExecutionListener;)V+76
+j  org.junit.platform.launcher.core.DefaultLauncher$$Lambda$124.accept(Ljava/lang/Object;)V+20
+j  org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(Lorg/junit/platform/engine/ConfigurationParameters;Lorg/junit/platform/launcher/core/TestExecutionListenerRegistry;Ljava/util/function/Consumer;)V+43
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/launcher/core/InternalTestPlan;[Lorg/junit/platform/launcher/TestExecutionListener;)V+33
+j  org.junit.platform.launcher.core.DefaultLauncher.execute(Lorg/junit/platform/launcher/LauncherDiscoveryRequest;[Lorg/junit/platform/launcher/TestExecutionListener;)V+33
+j  com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs([Ljava/lang/String;Ljava/lang/String;IZ)I+240
+j  com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(Lcom/intellij/rt/execution/junit/IdeaTestRunner;[Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;IZ)I+22
+j  com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart([Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)I+116
+j  com.intellij.rt.execution.junit.JUnitStarter.main([Ljava/lang/String;)V+116
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fb15c365000 JavaThread "Service Thread" daemon [_thread_blocked, id=11722, stack(0x00007fb1435c5000,0x00007fb1436c6000)]
+  0x00007fb15c361800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=11721, stack(0x00007fb1436c6000,0x00007fb1437c7000)]
+  0x00007fb15c35f000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=11720, stack(0x00007fb1437c7000,0x00007fb1438c8000)]
+  0x00007fb15c359000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11719, stack(0x00007fb1438c8000,0x00007fb1439c9000)]
+  0x00007fb15c356000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=11718, stack(0x00007fb1439c9000,0x00007fb143aca000)]
+  0x00007fb15c21a000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=11714, stack(0x00007fb143bf9000,0x00007fb143cfa000)]
+  0x00007fb15c20a000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11712, stack(0x00007fb14801e000,0x00007fb14811f000)]
+  0x00007fb15c1d8000 JavaThread "Finalizer" daemon [_thread_blocked, id=11709, stack(0x00007fb14811f000,0x00007fb148220000)]
+  0x00007fb15c1d5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11703, stack(0x00007fb148220000,0x00007fb148321000)]
+=>0x00007fb15c00f000 JavaThread "main" [_thread_in_vm, id=11693, stack(0x00007fb163fd9000,0x00007fb1640da000)]
+
+Other Threads:
+  0x00007fb15c1cc000 VMThread [stack: 0x00007fb148321000,0x00007fb148422000] [id=11702]
+  0x00007fb15c367800 WatcherThread [stack: 0x00007fb1434c4000,0x00007fb1435c5000] [id=11723]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 74752K, used 27182K [0x000000076d300000, 0x0000000772600000, 0x00000007c0000000)
+  eden space 64512K, 42% used [0x000000076d300000,0x000000076ed8b8f0,0x0000000771200000)
+  from space 10240K, 0% used [0x0000000771c00000,0x0000000771c00000,0x0000000772600000)
+  to   space 10240K, 0% used [0x0000000771200000,0x0000000771200000,0x0000000771c00000)
+ ParOldGen       total 171008K, used 0K [0x00000006c7800000, 0x00000006d1f00000, 0x000000076d300000)
+  object space 171008K, 0% used [0x00000006c7800000,0x00000006c7800000,0x00000006d1f00000)
+ Metaspace       used 7803K, capacity 8612K, committed 8960K, reserved 1056768K
+  class space    used 976K, capacity 1157K, committed 1280K, reserved 1048576K
+
+Card table byte_map: [0x00007fb14be54000,0x00007fb14c619000] byte_map_base: 0x00007fb148818000
+
+Marking Bits: (ParMarkBitMap*) 0x00007fb1632c9520
+ Begin Bits: [0x00007fb1143c0000, 0x00007fb1181e0000)
+ End Bits:   [0x00007fb1181e0000, 0x00007fb11c000000)
+
+Polling page: 0x00007fb16411d000
+
+CodeCache: size=245760Kb used=3224Kb max_used=3224Kb free=242535Kb
+ bounds [0x00007fb14c9d9000, 0x00007fb14cd09000, 0x00007fb15b9d9000]
+ total_blobs=1223 nmethods=932 adapters=213
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.566 Thread 0x00007fb15c361800  923       3       java.util.stream.StreamSpliterators$WrappingSpliterator$$Lambda$170/2131952342::get$Lambda (9 bytes)
+Event: 0.566 Thread 0x00007fb15c361800 nmethod 923 0x00007fb14ccfe310 code [0x00007fb14ccfe480, 0x00007fb14ccfe6d0]
+Event: 0.566 Thread 0x00007fb15c361800  927       3       java.util.Collections::emptySet (4 bytes)
+Event: 0.566 Thread 0x00007fb15c361800 nmethod 927 0x00007fb14ccfe7d0 code [0x00007fb14ccfe920, 0x00007fb14ccfea50]
+Event: 231.244 Thread 0x00007fb15c361800  930       3       java.util.HashMap$HashIterator::nextNode (100 bytes)
+Event: 231.244 Thread 0x00007fb15c361800 nmethod 930 0x00007fb14ccfead0 code [0x00007fb14ccfec80, 0x00007fb14ccff158]
+Event: 272.554 Thread 0x00007fb15c361800  932       3       java.util.AbstractCollection::addAll (42 bytes)
+Event: 272.555 Thread 0x00007fb15c361800 nmethod 932 0x00007fb14ccff3d0 code [0x00007fb14ccff580, 0x00007fb14ccffaf8]
+Event: 272.555 Thread 0x00007fb15c361800  931       3       java.util.LinkedList$ListItr::hasNext (20 bytes)
+Event: 272.555 Thread 0x00007fb15c361800 nmethod 931 0x00007fb14ccffcd0 code [0x00007fb14ccffe40, 0x00007fb14cd00010]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (1 events):
+Event: 0.449 Thread 0x00007fb15c00f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fb14cc54f30 method=jdk.internal.org.objectweb.asm.Type.getArgumentsAndReturnSizes(Ljava/lang/String;)I @ 88
+
+Classes redefined (8 events):
+Event: 231.084 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap, count=1
+Event: 231.088 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap$Entry, count=1
+Event: 272.384 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap, count=2
+Event: 272.387 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap$Entry, count=2
+Event: 305.700 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap, count=3
+Event: 305.702 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap$Entry, count=3
+Event: 340.126 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap, count=4
+Event: 340.130 Thread 0x00007fb15c1cc000 redefined class name=MyHashMap$Entry, count=4
+
+Internal exceptions (10 events):
+Event: 0.403 Thread 0x00007fb15c00f000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.containsTests(Lorg/junit/platform/engine/TestDescriptor;)Z> (0x000000076e40ec10) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/interpreter/linkResolver.cpp, lin
+Event: 0.436 Thread 0x00007fb15c00f000 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x000000076e5770e8) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 653]
+Event: 0.448 Thread 0x00007fb15c00f000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparing$77a9974f$1(Ljava/util/function/Function;Ljava/lang/Object;Ljava/lang/Object;)I> (0x000000076e61fc68) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share
+Event: 0.451 Thread 0x00007fb15c00f000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$thenComparing$36697e65$1(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I> (0x000000076e63b618) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm
+Event: 0.483 Thread 0x00007fb15c00f000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$and$0(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x000000076e851f78) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/interpreter/linkResolver.cpp
+Event: 0.537 Thread 0x00007fb15c00f000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076eac9548) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+Event: 0.548 Thread 0x00007fb15c00f000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076eb65ec0) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+Event: 0.557 Thread 0x00007fb15c00f000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076ebe80a0) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+Event: 0.559 Thread 0x00007fb15c00f000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076ec41158) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+Event: 0.561 Thread 0x00007fb15c00f000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076ec9b160) thrown at [/build/openjdk-8-6jqSe7/openjdk-8-8u191-b12/src/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+
+Events (10 events):
+Event: 530.691 Executing VM operation: ChangeBreakpoints done
+Event: 536.309 Executing VM operation: ChangeBreakpoints
+Event: 536.309 Executing VM operation: ChangeBreakpoints done
+Event: 536.309 Thread 0x00007fb104001000 Thread exited: 0x00007fb104001000
+Event: 536.309 Executing VM operation: ChangeBreakpoints
+Event: 536.309 Executing VM operation: ChangeBreakpoints done
+Event: 536.309 Executing VM operation: ChangeBreakpoints
+Event: 536.309 Executing VM operation: ChangeBreakpoints done
+Event: 536.309 Executing VM operation: ChangeBreakpoints
+Event: 536.309 Executing VM operation: ChangeBreakpoints done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 103:05 6423096                           /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 103:05 6423096                           /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 103:05 6423096                           /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+0102b000-0104c000 rw-p 00000000 00:00 0                                  [heap]
+6c7800000-6d1f00000 rw-p 00000000 00:00 0 
+6d1f00000-76d300000 ---p 00000000 00:00 0 
+76d300000-772600000 rw-p 00000000 00:00 0 
+772600000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c0140000 rw-p 00000000 00:00 0 
+7c0140000-800000000 ---p 00000000 00:00 0 
+7fb0e0000000-7fb0e0021000 rw-p 00000000 00:00 0 
+7fb0e0021000-7fb0e4000000 ---p 00000000 00:00 0 
+7fb0e4000000-7fb0e4021000 rw-p 00000000 00:00 0 
+7fb0e4021000-7fb0e8000000 ---p 00000000 00:00 0 
+7fb0e8000000-7fb0e82aa000 rw-p 00000000 00:00 0 
+7fb0e82aa000-7fb0ec000000 ---p 00000000 00:00 0 
+7fb0ec000000-7fb0ec25e000 rw-p 00000000 00:00 0 
+7fb0ec25e000-7fb0f0000000 ---p 00000000 00:00 0 
+7fb0f0000000-7fb0f0130000 rw-p 00000000 00:00 0 
+7fb0f0130000-7fb0f4000000 ---p 00000000 00:00 0 
+7fb0f4000000-7fb0f40c2000 rw-p 00000000 00:00 0 
+7fb0f40c2000-7fb0f8000000 ---p 00000000 00:00 0 
+7fb0f8000000-7fb0f8078000 rw-p 00000000 00:00 0 
+7fb0f8078000-7fb0fc000000 ---p 00000000 00:00 0 
+7fb0fc000000-7fb0fc021000 rw-p 00000000 00:00 0 
+7fb0fc021000-7fb100000000 ---p 00000000 00:00 0 
+7fb100000000-7fb100021000 rw-p 00000000 00:00 0 
+7fb100021000-7fb104000000 ---p 00000000 00:00 0 
+7fb104000000-7fb104021000 rw-p 00000000 00:00 0 
+7fb104021000-7fb108000000 ---p 00000000 00:00 0 
+7fb108000000-7fb108021000 rw-p 00000000 00:00 0 
+7fb108021000-7fb10c000000 ---p 00000000 00:00 0 
+7fb10c000000-7fb10c021000 rw-p 00000000 00:00 0 
+7fb10c021000-7fb110000000 ---p 00000000 00:00 0 
+7fb110000000-7fb110021000 rw-p 00000000 00:00 0 
+7fb110021000-7fb114000000 ---p 00000000 00:00 0 
+7fb1143c0000-7fb11c000000 rw-p 00000000 00:00 0 
+7fb11c000000-7fb11c021000 rw-p 00000000 00:00 0 
+7fb11c021000-7fb120000000 ---p 00000000 00:00 0 
+7fb120000000-7fb120021000 rw-p 00000000 00:00 0 
+7fb120021000-7fb124000000 ---p 00000000 00:00 0 
+7fb124000000-7fb124021000 rw-p 00000000 00:00 0 
+7fb124021000-7fb128000000 ---p 00000000 00:00 0 
+7fb12c000000-7fb12c021000 rw-p 00000000 00:00 0 
+7fb12c021000-7fb130000000 ---p 00000000 00:00 0 
+7fb134000000-7fb134021000 rw-p 00000000 00:00 0 
+7fb134021000-7fb138000000 ---p 00000000 00:00 0 
+7fb138000000-7fb138021000 rw-p 00000000 00:00 0 
+7fb138021000-7fb13c000000 ---p 00000000 00:00 0 
+7fb13c000000-7fb13c021000 rw-p 00000000 00:00 0 
+7fb13c021000-7fb140000000 ---p 00000000 00:00 0 
+7fb1434c4000-7fb1434c5000 ---p 00000000 00:00 0 
+7fb1434c5000-7fb1435c5000 rw-p 00000000 00:00 0 
+7fb1435c5000-7fb1435c8000 ---p 00000000 00:00 0 
+7fb1435c8000-7fb1436c6000 rw-p 00000000 00:00 0 
+7fb1436c6000-7fb1436c9000 ---p 00000000 00:00 0 
+7fb1436c9000-7fb1437c7000 rw-p 00000000 00:00 0 
+7fb1437c7000-7fb1437ca000 ---p 00000000 00:00 0 
+7fb1437ca000-7fb1438c8000 rw-p 00000000 00:00 0 
+7fb1438c8000-7fb1438cb000 ---p 00000000 00:00 0 
+7fb1438cb000-7fb1439c9000 rw-p 00000000 00:00 0 
+7fb1439c9000-7fb1439cc000 ---p 00000000 00:00 0 
+7fb1439cc000-7fb143aca000 rw-p 00000000 00:00 0 
+7fb143aca000-7fb143add000 r--s 00346000 103:05 6690727                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+7fb143add000-7fb143af8000 r--s 001d6000 103:05 6690599                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7fb143af8000-7fb143afb000 ---p 00000000 00:00 0 
+7fb143afb000-7fb143bf9000 rw-p 00000000 00:00 0 
+7fb143bf9000-7fb143bfc000 ---p 00000000 00:00 0 
+7fb143bfc000-7fb143cfa000 rw-p 00000000 00:00 0 
+7fb143cfa000-7fb143cfd000 ---p 00000000 00:00 0 
+7fb143cfd000-7fb143dfb000 rw-p 00000000 00:00 0 
+7fb143dfb000-7fb143dff000 r-xp 00000000 103:05 6690693                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libdt_socket.so
+7fb143dff000-7fb143ffe000 ---p 00004000 103:05 6690693                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libdt_socket.so
+7fb143ffe000-7fb143fff000 r--p 00003000 103:05 6690693                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libdt_socket.so
+7fb143fff000-7fb144000000 rw-p 00004000 103:05 6690693                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libdt_socket.so
+7fb144000000-7fb144021000 rw-p 00000000 00:00 0 
+7fb144021000-7fb148000000 ---p 00000000 00:00 0 
+7fb148003000-7fb14801e000 r--s 00394000 103:05 6690605                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7fb14801e000-7fb148021000 ---p 00000000 00:00 0 
+7fb148021000-7fb14811f000 rw-p 00000000 00:00 0 
+7fb14811f000-7fb148122000 ---p 00000000 00:00 0 
+7fb148122000-7fb148220000 rw-p 00000000 00:00 0 
+7fb148220000-7fb148223000 ---p 00000000 00:00 0 
+7fb148223000-7fb148321000 rw-p 00000000 00:00 0 
+7fb148321000-7fb148322000 ---p 00000000 00:00 0 
+7fb148322000-7fb149f8b000 rw-p 00000000 00:00 0 
+7fb149f8b000-7fb14a15a000 r--s 03c33000 103:05 6690618                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7fb14a15a000-7fb14a8da000 rw-p 00000000 00:00 0 
+7fb14a8da000-7fb14a95a000 ---p 00000000 00:00 0 
+7fb14a95a000-7fb14b11e000 rw-p 00000000 00:00 0 
+7fb14b11e000-7fb14b11f000 ---p 00000000 00:00 0 
+7fb14b11f000-7fb14b21f000 rw-p 00000000 00:00 0 
+7fb14b21f000-7fb14b220000 ---p 00000000 00:00 0 
+7fb14b220000-7fb14b320000 rw-p 00000000 00:00 0 
+7fb14b320000-7fb14b321000 ---p 00000000 00:00 0 
+7fb14b321000-7fb14b421000 rw-p 00000000 00:00 0 
+7fb14b421000-7fb14b422000 ---p 00000000 00:00 0 
+7fb14b422000-7fb14b522000 rw-p 00000000 00:00 0 
+7fb14b522000-7fb14b523000 ---p 00000000 00:00 0 
+7fb14b523000-7fb14b623000 rw-p 00000000 00:00 0 
+7fb14b623000-7fb14b624000 ---p 00000000 00:00 0 
+7fb14b624000-7fb14b724000 rw-p 00000000 00:00 0 
+7fb14b724000-7fb14b725000 ---p 00000000 00:00 0 
+7fb14b725000-7fb14b825000 rw-p 00000000 00:00 0 
+7fb14b825000-7fb14b826000 ---p 00000000 00:00 0 
+7fb14b826000-7fb14b97a000 rw-p 00000000 00:00 0 
+7fb14b97a000-7fb14be54000 ---p 00000000 00:00 0 
+7fb14be54000-7fb14bea8000 rw-p 00000000 00:00 0 
+7fb14bea8000-7fb14c381000 ---p 00000000 00:00 0 
+7fb14c381000-7fb14c3ab000 rw-p 00000000 00:00 0 
+7fb14c3ab000-7fb14c618000 ---p 00000000 00:00 0 
+7fb14c618000-7fb14c626000 rw-p 00000000 00:00 0 
+7fb14c626000-7fb14c9d9000 ---p 00000000 00:00 0 
+7fb14c9d9000-7fb14cd09000 rwxp 00000000 00:00 0 
+7fb14cd09000-7fb15b9d9000 ---p 00000000 00:00 0 
+7fb15b9d9000-7fb15b9e1000 r-xp 00000000 103:05 6690694                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb15b9e1000-7fb15bbe0000 ---p 00008000 103:05 6690694                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb15bbe0000-7fb15bbe1000 r--p 00007000 103:05 6690694                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb15bbe1000-7fb15bbe2000 rw-p 00008000 103:05 6690694                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb15bbe2000-7fb15bbed000 r-xp 00000000 103:05 5378743                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb15bbed000-7fb15bdec000 ---p 0000b000 103:05 5378743                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb15bdec000-7fb15bded000 r--p 0000a000 103:05 5378743                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb15bded000-7fb15bdee000 rw-p 0000b000 103:05 5378743                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb15bdee000-7fb15bdf4000 rw-p 00000000 00:00 0 
+7fb15bdf4000-7fb15bdff000 r-xp 00000000 103:05 5378753                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb15bdff000-7fb15bffe000 ---p 0000b000 103:05 5378753                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb15bffe000-7fb15bfff000 r--p 0000a000 103:05 5378753                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb15bfff000-7fb15c000000 rw-p 0000b000 103:05 5378753                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb15c000000-7fb15c5ef000 rw-p 00000000 00:00 0 
+7fb15c5ef000-7fb160000000 ---p 00000000 00:00 0 
+7fb160004000-7fb160005000 r--s 00002000 103:05 6305994                   /tmp/debugger-agent-storage1912106447137562613jar
+7fb160005000-7fb16000c000 r--s 00066000 103:05 9310662                   /home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/lib/rt/debugger-agent.jar
+7fb16000c000-7fb160082000 rw-p 00000000 00:00 0 
+7fb160082000-7fb160098000 r-xp 00000000 103:05 5378737                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb160098000-7fb160297000 ---p 00016000 103:05 5378737                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb160297000-7fb160298000 r--p 00015000 103:05 5378737                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb160298000-7fb160299000 rw-p 00016000 103:05 5378737                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb160299000-7fb16029b000 rw-p 00000000 00:00 0 
+7fb16029b000-7fb1602a3000 r-xp 00000000 103:05 5378739                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb1602a3000-7fb1604a2000 ---p 00008000 103:05 5378739                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb1604a2000-7fb1604a3000 r--p 00007000 103:05 5378739                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb1604a3000-7fb1604a4000 rw-p 00008000 103:05 5378739                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb1604a4000-7fb1604ae000 r-xp 00000000 103:05 6690706                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7fb1604ae000-7fb1606ad000 ---p 0000a000 103:05 6690706                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7fb1606ad000-7fb1606ae000 r--p 00009000 103:05 6690706                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7fb1606ae000-7fb1606af000 rw-p 0000a000 103:05 6690706                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7fb1606af000-7fb16106e000 r--p 00000000 103:05 4463445                   /usr/lib/locale/locale-archive
+7fb16106e000-7fb161070000 r-xp 00000000 103:05 6690631                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnpt.so
+7fb161070000-7fb161270000 ---p 00002000 103:05 6690631                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnpt.so
+7fb161270000-7fb161271000 r--p 00002000 103:05 6690631                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnpt.so
+7fb161271000-7fb161272000 rw-p 00003000 103:05 6690631                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnpt.so
+7fb161272000-7fb1612ad000 r-xp 00000000 103:05 6690712                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjdwp.so
+7fb1612ad000-7fb1614ad000 ---p 0003b000 103:05 6690712                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjdwp.so
+7fb1614ad000-7fb1614ae000 r--p 0003b000 103:05 6690712                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjdwp.so
+7fb1614ae000-7fb1614af000 rw-p 0003c000 103:05 6690712                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjdwp.so
+7fb1614af000-7fb1614dc000 r-xp 00000000 103:05 6690708                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb1614dc000-7fb1616db000 ---p 0002d000 103:05 6690708                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb1616db000-7fb1616dc000 r--p 0002c000 103:05 6690708                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb1616dc000-7fb1616de000 rw-p 0002d000 103:05 6690708                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb1616de000-7fb1616ed000 r-xp 00000000 103:05 6690713                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb1616ed000-7fb1618ec000 ---p 0000f000 103:05 6690713                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb1618ec000-7fb1618ee000 r--p 0000e000 103:05 6690713                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb1618ee000-7fb1618ef000 rw-p 00010000 103:05 6690713                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb1618ef000-7fb1618f6000 r-xp 00000000 103:05 5378798                   /lib/x86_64-linux-gnu/librt-2.23.so
+7fb1618f6000-7fb161af5000 ---p 00007000 103:05 5378798                   /lib/x86_64-linux-gnu/librt-2.23.so
+7fb161af5000-7fb161af6000 r--p 00006000 103:05 5378798                   /lib/x86_64-linux-gnu/librt-2.23.so
+7fb161af6000-7fb161af7000 rw-p 00007000 103:05 5378798                   /lib/x86_64-linux-gnu/librt-2.23.so
+7fb161af7000-7fb161b0d000 r-xp 00000000 103:05 5378682                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb161b0d000-7fb161d0c000 ---p 00016000 103:05 5378682                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb161d0c000-7fb161d0d000 rw-p 00015000 103:05 5378682                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb161d0d000-7fb161e15000 r-xp 00000000 103:05 5378714                   /lib/x86_64-linux-gnu/libm-2.23.so
+7fb161e15000-7fb162014000 ---p 00108000 103:05 5378714                   /lib/x86_64-linux-gnu/libm-2.23.so
+7fb162014000-7fb162015000 r--p 00107000 103:05 5378714                   /lib/x86_64-linux-gnu/libm-2.23.so
+7fb162015000-7fb162016000 rw-p 00108000 103:05 5378714                   /lib/x86_64-linux-gnu/libm-2.23.so
+7fb162016000-7fb162188000 r-xp 00000000 103:05 4456636                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb162188000-7fb162388000 ---p 00172000 103:05 4456636                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb162388000-7fb162392000 r--p 00172000 103:05 4456636                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb162392000-7fb162394000 rw-p 0017c000 103:05 4456636                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb162394000-7fb162398000 rw-p 00000000 00:00 0 
+7fb162398000-7fb162ff9000 r-xp 00000000 103:05 6690718                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb162ff9000-7fb1631f9000 ---p 00c61000 103:05 6690718                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb1631f9000-7fb16328d000 r--p 00c61000 103:05 6690718                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb16328d000-7fb1632b6000 rw-p 00cf5000 103:05 6690718                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb1632b6000-7fb1632e6000 rw-p 00000000 00:00 0 
+7fb1632e6000-7fb1632fe000 r-xp 00000000 103:05 5378790                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb1632fe000-7fb1634fd000 ---p 00018000 103:05 5378790                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb1634fd000-7fb1634fe000 r--p 00017000 103:05 5378790                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb1634fe000-7fb1634ff000 rw-p 00018000 103:05 5378790                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb1634ff000-7fb163503000 rw-p 00000000 00:00 0 
+7fb163503000-7fb163506000 r-xp 00000000 103:05 5378668                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb163506000-7fb163705000 ---p 00003000 103:05 5378668                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb163705000-7fb163706000 r--p 00002000 103:05 5378668                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb163706000-7fb163707000 rw-p 00003000 103:05 5378668                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb163707000-7fb163720000 r-xp 00000000 103:05 5378835                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb163720000-7fb16391f000 ---p 00019000 103:05 5378835                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb16391f000-7fb163920000 r--p 00018000 103:05 5378835                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb163920000-7fb163921000 rw-p 00019000 103:05 5378835                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb163921000-7fb163ae1000 r-xp 00000000 103:05 5378644                   /lib/x86_64-linux-gnu/libc-2.23.so
+7fb163ae1000-7fb163ce1000 ---p 001c0000 103:05 5378644                   /lib/x86_64-linux-gnu/libc-2.23.so
+7fb163ce1000-7fb163ce5000 r--p 001c0000 103:05 5378644                   /lib/x86_64-linux-gnu/libc-2.23.so
+7fb163ce5000-7fb163ce7000 rw-p 001c4000 103:05 5378644                   /lib/x86_64-linux-gnu/libc-2.23.so
+7fb163ce7000-7fb163ceb000 rw-p 00000000 00:00 0 
+7fb163ceb000-7fb163cf8000 r-xp 00000000 103:05 6690710                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb163cf8000-7fb163ef8000 ---p 0000d000 103:05 6690710                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb163ef8000-7fb163ef9000 r--p 0000d000 103:05 6690710                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb163ef9000-7fb163efa000 rw-p 0000e000 103:05 6690710                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb163efa000-7fb163f20000 r-xp 00000000 103:05 5378616                   /lib/x86_64-linux-gnu/ld-2.23.so
+7fb163f20000-7fb163f21000 r--s 00002000 103:05 6305994                   /tmp/debugger-agent-storage1912106447137562613jar
+7fb163f21000-7fb163f26000 r--s 000a0000 103:05 6690728                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7fb163f26000-7fb163f2b000 r--s 000a0000 103:05 6690728                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7fb163f2b000-7fb163f30000 r--s 002f9000 103:05 6690589                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar
+7fb163f30000-7fb163fd9000 rw-p 00000000 00:00 0 
+7fb163fd9000-7fb163fdc000 ---p 00000000 00:00 0 
+7fb163fdc000-7fb1640de000 rw-p 00000000 00:00 0 
+7fb1640de000-7fb1640df000 r--s 00000000 103:05 6690729                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar
+7fb1640df000-7fb1640e1000 r--s 00016000 103:05 6690612                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+7fb1640e1000-7fb1640e5000 r--s 0001d000 103:05 12192362                  /home/sherrieshen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar
+7fb1640e5000-7fb1640e9000 r--s 00028000 103:05 12192634                  /home/sherrieshen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar
+7fb1640e9000-7fb1640eb000 r--s 00014000 103:05 12192364                  /home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar
+7fb1640eb000-7fb1640ec000 r--s 00001000 103:05 10622345                  /home/sherrieshen/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar
+7fb1640ec000-7fb1640f0000 r--s 0001f000 103:05 12192629                  /home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar
+7fb1640f0000-7fb1640f1000 r--s 00000000 103:05 10497168                  /home/sherrieshen/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar
+7fb1640f1000-7fb1640f3000 r--s 00016000 103:05 12192628                  /home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-launcher/1.4.0/junit-platform-launcher-1.4.0.jar
+7fb1640f3000-7fb1640f4000 r--s 00009000 103:05 11011915                  /home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/plugins/junit/lib/junit5-rt.jar
+7fb1640f4000-7fb1640f6000 r--s 00020000 103:05 11011914                  /home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/plugins/junit/lib/junit-rt.jar
+7fb1640f6000-7fb1640f8000 r--s 0001a000 103:05 9310551                   /home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/lib/idea_rt.jar
+7fb1640f8000-7fb1640fa000 r--s 00008000 103:05 6690601                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7fb1640fa000-7fb1640fd000 r--s 0000f000 103:05 6690607                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7fb1640fd000-7fb164100000 r--s 00038000 103:05 6690600                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7fb164100000-7fb164101000 r--s 0000a000 103:05 6690604                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7fb164101000-7fb164103000 r--s 00001000 103:05 6690603                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7fb164103000-7fb164104000 r--s 00010000 103:05 6690602                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7fb164104000-7fb16410a000 r--s 0003b000 103:05 6690606                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7fb16410a000-7fb164114000 r--s 00116000 103:05 6690608                   /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7fb164114000-7fb16411c000 rw-s 00000000 103:05 6291632                   /tmp/hsperfdata_sherrieshen/11690
+7fb16411c000-7fb16411d000 rw-p 00000000 00:00 0 
+7fb16411d000-7fb16411e000 r--p 00000000 00:00 0 
+7fb16411e000-7fb16411f000 rw-p 00000000 00:00 0 
+7fb16411f000-7fb164120000 r--p 00025000 103:05 5378616                   /lib/x86_64-linux-gnu/ld-2.23.so
+7fb164120000-7fb164121000 rw-p 00026000 103:05 5378616                   /lib/x86_64-linux-gnu/ld-2.23.so
+7fb164121000-7fb164122000 rw-p 00000000 00:00 0 
+7ffc03646000-7ffc03668000 rw-p 00000000 00:00 0                          [stack]
+7ffc0375f000-7ffc03762000 r--p 00000000 00:00 0                          [vvar]
+7ffc03762000-7ffc03764000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:36673,suspend=y,server=n -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:/home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/lib/rt/debugger-agent.jar -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.execution.junit.JUnitStarter -ideVersion5 -junit5 MyHashMapTest
+java_class_path (initial): /home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/lib/idea_rt.jar:/home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/plugins/junit/lib/junit-rt.jar:/home/sherrieshen/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/plugins/junit/lib/junit5-rt.jar:/home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-launcher/1.4.0/junit-platform-launcher-1.4.0.jar:/home/sherrieshen/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/home/sherrieshen/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/home/sherrieshen/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/home/sherrieshen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/home/sherrieshen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/ho
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-11-oracle
+PATH=/home/sherrieshen/bin:/home/sherrieshen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-oracle/bin:/usr/lib/jvm/java-11-oracle/db/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa74ca0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa74ca0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8bbcf0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8bbcf0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8bbcf0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8bbcf0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8bbba0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8bc230], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8bc230], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8bc230], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8bc230], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.5 LTS"
+
+uname:Linux 4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 63196, NOFILE 1048576, AS infinity
+load average:0.74 1.03 1.06
+
+/proc/meminfo:
+MemTotal:       16280412 kB
+MemFree:         8016956 kB
+MemAvailable:   11311612 kB
+Buffers:          323376 kB
+Cached:          3490192 kB
+SwapCached:            0 kB
+Active:          5697220 kB
+Inactive:        2001056 kB
+Active(anon):    3887540 kB
+Inactive(anon):   464480 kB
+Active(file):    1809680 kB
+Inactive(file):  1536576 kB
+Unevictable:          64 kB
+Mlocked:              64 kB
+SwapTotal:       1000444 kB
+SwapFree:        1000444 kB
+Dirty:               464 kB
+Writeback:             0 kB
+AnonPages:       3884584 kB
+Mapped:           601872 kB
+Shmem:            467312 kB
+Slab:             368248 kB
+SReclaimable:     290720 kB
+SUnreclaim:        77528 kB
+KernelStack:       16176 kB
+PageTables:        68292 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     9140648 kB
+Committed_AS:   12909344 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      314396 kB
+DirectMap2M:    11075584 kB
+DirectMap1G:     5242880 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-7
+cpu_memory_nodes: 0
+active_processor_count: 8
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 7883612160
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
