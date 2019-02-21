@@ -18,7 +18,7 @@ public class LocksAndKeys {
                 j--;
             }
         }
-        swap(arr,i,high);
+        swap(arr,i,high);//swap with first one that's larger than pivot
         return i;
     }
     private static void matchPairs(char[] locks, char[] keys, int low,
@@ -26,10 +26,7 @@ public class LocksAndKeys {
     {
         if (low < high)
         {
-            // Choose last character of keys array for locks partition.
-            int pivot = partition(locks, low, high, keys[high]);
-
-            // Now using the partition of locks choose that for keys partition.
+            int pivot = partition(locks, low, high, keys[high]); //last character
             partition(keys, low, high, locks[pivot]);
 
             matchPairs(locks, keys, low, pivot-1);
