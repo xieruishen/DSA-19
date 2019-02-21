@@ -4,7 +4,7 @@ public class InsertionSort extends SortAlgorithm {
      * Use the insertion sort algorithm to sort the array
      *
      * TODO
-     * Best-case runtime: O(1)
+     * Best-case runtime: O(N)
      * Worst-case runtime: 0(N^2)
      * Average-case runtime: O(N^2)
      *

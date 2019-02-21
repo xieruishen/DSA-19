@@ -9,7 +9,7 @@ public class MergeSort extends SortAlgorithm {
      * Use Insertion Sort if the length of the array is <= INSERTION_THRESHOLD
      *
      * TODO
-     * Best-case runtime: O(1)
+     * Best-case runtime: O(nlgn)
      * Worst-case runtime: O(nlgn)
      * Average-case runtime: O(nlgn)
      *
