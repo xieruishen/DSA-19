@@ -16,6 +16,7 @@ public class RadixSort {
      *
      * @param b The base used in radix sort
      * @param n The digit number (where 0 is the least significant digit)
+     *          space complexity O(n) empty node doesnt count
      */
     static void countingSortByDigit(int[] A, int b, int n) {
         LinkedList<Integer>[] L = new LinkedList[b];
