@@ -60,7 +60,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         TreeNode<T> deleted = delete(toDelete);
         if (toDelete == root) {
-            root = deleted;
+            root = deleted; // update tree root with replacement
         }
         size--;
         return true;
@@ -135,7 +135,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     private TreeNode<T> findPredecessor(TreeNode<T> n) {
-        // worst case runtime: log(n)
+        // worst case runtime: log(n) (balanced)
+        // unblanced O(n)
         if (n == null){
             return null;
         }

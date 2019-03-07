@@ -44,7 +44,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
             System.out.println("Key does not exist");
             return false;
         }
-        root = delete(root, key);
+        root = delete(root, key); //update root if the node deleted is root
         size--;
         return true;
     }
@@ -56,13 +56,13 @@ public class BinarySearchTree<T extends Comparable<T>> {
         } else if (cmp > 0) {
             n.rightChild = delete(n.rightChild, key);
         } else {
-            if (n.leftChild == null) {
+            if (n.leftChild == null) { // if only has one child, replace with that
                 return n.rightChild;
             } else if (n.rightChild == null) {
                 return n.leftChild;
             } else {
-                TreeNode<T> tmp = n;
-                n = min(tmp.rightChild);
+                TreeNode<T> tmp = n; // node needs to be deleted
+                n = min(tmp.rightChild); // replace with successor
                 n.rightChild = deleteMin(tmp.rightChild);
                 n.leftChild = tmp.leftChild;
             }
@@ -83,7 +83,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
      */
     TreeNode<T> deleteMin(TreeNode<T> n) {
         if (n.leftChild == null) return n.rightChild;
-        n.leftChild = deleteMin(n.leftChild);
+        n.leftChild = deleteMin(n.leftChild); // replace the min node with its right child
         return n;
     }
 
