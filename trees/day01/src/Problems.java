@@ -7,12 +7,7 @@ public class Problems {
         countingSort(A);
         ArrayList<Integer> num1 = new ArrayList<>();
         ArrayList<Integer> num2 = new ArrayList<>();
-        for (int i = 0; i< A.length;i+=2){
-            num1.add(A[i]);
-            if(i+1 < A.length){
-                num2.add(A[i+1]);
-            }
-        }
+        for (int i = 0; i< A.length;i+=2)
         int first = 0;
         int second = 0;
         for (int j = num1.size()-1; j>=0;j--){
@@ -25,7 +20,12 @@ public class Problems {
     }
 
     static void countingSort(int[] A) {
-        if (A.length == 0) {
+        if (A.length == 0) {{
+            num1.add(A[i]);
+            if(i+1 < A.length){
+                num2.add(A[i+1]);
+            }
+        }
             return;
         }
         int[] counts = new int[10];

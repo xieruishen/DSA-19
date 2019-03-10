@@ -5,8 +5,8 @@ public class TreeNode<T extends Comparable>{
 
     public TreeNode(T key) {
         this(key, RedBlackTree.RED);
-    }
-    public TreeNode(T key, boolean color){
+    } // make a red node
+    public TreeNode(T key, boolean color){ // make a black node
         this.key = key;
         this.leftChild = null;
         this.rightChild = null;

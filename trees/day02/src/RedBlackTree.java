@@ -36,18 +36,33 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
     // make a left-leaning link lean to the right
     TreeNode<T> rotateRight(TreeNode<T> h) {
         // TODO
-        return h;
+        TreeNode<T> x = h.leftChild;
+        TreeNode<T> beta = x.rightChild;
+        x.rightChild = h;
+        h.leftChild = beta;
+        x.color = h.color;
+        h.color = RedBlackTree.RED;
+        return x;
     }
 
     // make a right-leaning link lean to the left
     TreeNode<T> rotateLeft(TreeNode<T> h) {
         // TODO
-        return h;
+        TreeNode<T> x = h.rightChild;
+        TreeNode<T> beta = x.leftChild;
+        x.leftChild = h;
+        h.rightChild = beta;
+        x.color = h.color;
+        h.color = RedBlackTree.RED;
+        return x;
     }
 
     // flip the colors of a TreeNode and its two children
     TreeNode<T> flipColors(TreeNode<T> h) {
         // TODO
+        h.color = !h.color;
+        h.leftChild.color = !h.leftChild.color;
+        h.rightChild.color = !h.rightChild.color;
         return h;
     }
 
@@ -61,6 +76,15 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
      */
     private TreeNode<T> balance(TreeNode<T> h) {
         // TODO
+
+        if (isRed(h.rightChild)){
+            h= rotateLeft(h);
+        }
+        if (isRed(h.leftChild) && isRed(h.leftChild.leftChild)){
+            h= rotateRight(h);
+        }
+        if (isRed(h.leftChild) && isRed(h.rightChild))
+            h= flipColors(h);
         return h;
     }
 
@@ -73,7 +97,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
     TreeNode<T> insert(TreeNode<T> h, T key) {
         h = super.insert(h, key);
         // TODO: use balance to correct for the three rotation cases
-        return h;
+        return balance(h);
     }
 
 
@@ -151,8 +175,8 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         int rBalanced = isBalanced(n.rightChild);
         if (lBalanced == -1 || rBalanced == -1) return -1;
         if (isBlack(n.leftChild)) lBalanced++;
-        if (isBlack(n.rightChild)) rBalanced++;
-        if (lBalanced != rBalanced) return -1;
+        if (isBlack(n.rightChild)) rBalanced++; // case 1
+        if (lBalanced != rBalanced) return -1; // check case 1,2,3
         return lBalanced;
     }
 
