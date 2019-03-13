@@ -82,6 +82,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         }
         if (isRed(h.leftChild) && isRed(h.leftChild.leftChild)){
             h= rotateRight(h);
+            h = flipColors(h);
         }
         if (isRed(h.leftChild) && isRed(h.rightChild))
             h= flipColors(h);
@@ -91,12 +92,12 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
     /**
      * Recursively insert a new node into the BST
-     * Runtime: TODO
+     * Runtime: log(N)
      */
     @Override
     TreeNode<T> insert(TreeNode<T> h, T key) {
-        h = super.insert(h, key);
         // TODO: use balance to correct for the three rotation cases
+        h = super.insert(h, key);
         return balance(h);
     }
 

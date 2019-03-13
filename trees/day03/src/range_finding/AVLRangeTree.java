@@ -1,5 +1,6 @@
 package range_finding;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,6 +14,8 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
         n = super.delete(n, key);
         if (n != null) {
             n.height = 1 + Math.max(height(n.leftChild), height(n.rightChild));
+            n.left_subnodes = 1+count_subnodes(n.leftChild);
+            n.right_subnodes = 1+ count_subnodes(n.rightChild);
             return balance(n);
         }
         return null;
@@ -26,6 +29,8 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
         n = super.insert(n, key);
         if (n != null) {
             n.height = 1 + Math.max(height(n.leftChild), height(n.rightChild));
+            n.left_subnodes = 1+count_subnodes(n.leftChild);
+            n.right_subnodes = 1+ count_subnodes(n.rightChild);
             return balance(n);
         }
         return null;
@@ -39,6 +44,8 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
         n = super.deleteMin(n);
         if (n != null) {
             n.height = 1 + Math.max(height(n.leftChild), height(n.rightChild));
+            n.left_subnodes = 1+count_subnodes(n.leftChild);
+            n.right_subnodes = 1+ count_subnodes(n.rightChild);
             return balance(n);
         }
         return null;
@@ -48,6 +55,13 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
     private int height(RangeNode x) {
         if (x == null) return -1;
         return x.height;
+    }
+
+    private int count_subnodes(RangeNode x){
+        if (x == null) return -1;
+        else{
+            return x.left_subnodes + x.right_subnodes;
+        }
     }
 
     public int height() {
@@ -71,19 +85,94 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
     }
 
     // Return all keys that are between [lo, hi] (inclusive).
-    // TODO: runtime = O(?)
+    // TODO: runtime = O(log(N) + L)
     public List<Integer> rangeIndex(int lo, int hi) {
         // TODO
         List<Integer> l = new LinkedList<>();
+        int count = rangeCount(lo,hi);
+        RangeIndexTraverse(root,l,lo,count);
         return l;
     }
 
+    public int RangeIndexTraverse(RangeNode<Integer> node, List<Integer> list, int lo, int count) {
+        if (node != null && count > 0) {
+            if(node.key.compareTo(lo) >= 0) {
+                count = RangeIndexTraverse(node.leftChild, list,lo,count);
+                if(count > 0){
+                    list.add(node.key);
+                    count--;
+                    count = RangeIndexTraverse(node.rightChild,list,lo,count);
+                }
+            }
+            else{
+                count = RangeIndexTraverse(node.rightChild,list,lo,count);
+            }
+        }
+        return count;
+    }
+
+//    // Return all keys that are between [lo, hi] (inclusive).
+//    // TODO: runtime = O(N)
+//    public List<Integer> rangeIndex(int lo, int hi) {
+//        // TODO
+////        int count = rangeCount(lo,hi);
+//        List<Integer> l = new LinkedList<>();
+//
+//        int count = 0;
+//        List<Integer> sorted_node = inOrderTraversal();
+//        for(int i = 0; i<sorted_node.size();i++){
+//            if (sorted_node.get(i) <=hi && sorted_node.get(i) >= lo){
+//                count++;
+//                l.add(sorted_node.get(i));
+//            }
+//            else if(sorted_node.get(i) < lo){
+//                continue;
+//            }
+//            else{
+//                break;
+//            }
+//        }
+//
+//        return l;
+//    }
+
     // return the number of keys between [lo, hi], inclusive
-    // TODO: runtime = O(?)
+    // TODO: runtime = O(log(N))
     public int rangeCount(int lo, int hi) {
         // TODO
-        return 0;
+        int count1 = rank(lo-1);
+        int count2 = rank(hi);
+        return count2 - count1;
     }
+
+    public int rank(int k){
+        int count = 0;
+        RangeNode<Integer> current = root;
+        while(current!=null){
+            if(current.key.compareTo(k) <= 0){ // <= k
+                count += current.left_subnodes + 1;
+                current = current.rightChild;
+            }
+            else{
+                current = current.leftChild;
+            }
+        }
+        return count;
+    }
+
+//    public int rank(int k){ // O(N) method
+//       int count = 0;
+//       List<Integer> sorted_node = inOrderTraversal();
+//       for(int i = 0; i<sorted_node.size();i++){
+//           if (sorted_node.get(i) <=k){
+//               count++;
+//           }
+//           else{
+//               break;
+//           }
+//       }
+//       return count;
+//    }
 
     /**
      * Returns the balance factor of the subtree. The balance factor is defined
@@ -105,6 +194,10 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
         y.rightChild = x;
         x.height = 1 + Math.max(height(x.leftChild), height(x.rightChild));
         y.height = 1 + Math.max(height(y.leftChild), height(y.rightChild));
+        x.left_subnodes = 1+count_subnodes(x.leftChild);
+        x.right_subnodes = 1+ count_subnodes(x.rightChild);
+        y.left_subnodes = 1+count_subnodes(y.leftChild);
+        y.right_subnodes = 1+ count_subnodes(y.rightChild);
         return y;
     }
 
@@ -117,6 +210,10 @@ public class AVLRangeTree extends BinarySearchTree<Integer> {
         y.leftChild = x;
         x.height = 1 + Math.max(height(x.leftChild), height(x.rightChild));
         y.height = 1 + Math.max(height(y.leftChild), height(y.rightChild));
+        x.left_subnodes = 1+count_subnodes(x.leftChild);
+        x.right_subnodes = 1+ count_subnodes(x.rightChild);
+        y.left_subnodes = 1+count_subnodes(y.leftChild);
+        y.right_subnodes = 1+ count_subnodes(y.rightChild);
         return y;
     }
 }
