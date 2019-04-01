@@ -14,6 +14,8 @@ public class PermutationsTest {
     public void testPermutations1() {
         List<List<Integer>> perm = Permutations.permutations(Arrays.asList(1, 2, 3));
         Integer[][] expectedOutput = new Integer[][]{{1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}};
+        System.out.println(TestUtil.listListToArray(perm));
+        System.out.println(expectedOutput);
         TestUtil.containsInAnyOrder(TestUtil.listListToArray(perm), expectedOutput);
     }
 

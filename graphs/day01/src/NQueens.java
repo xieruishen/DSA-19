@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NQueens {
@@ -37,6 +38,16 @@ public class NQueens {
         return false;
     }
 
+    /**
+     * check for a given column whether each row above a desired row has a queen
+     */
+    public static boolean checkColumn(char[][] board, int r, int c){
+        for(int i = 0; i < r;i++){
+            if(board[i][c] == 'Q') return true;
+        }
+        return false;
+    }
+
 
     /**
      * Creates a deep copy of the input array and returns it
@@ -52,7 +63,28 @@ public class NQueens {
     public static List<char[][]> nQueensSolutions(int n) {
         // TODO
         List<char[][]> answers = new ArrayList<>();
+        char[][] board = new char[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                board[i][j] = '.';
+            }
+        }
+        nQueenHelper(board,0,answers,n);
         return answers;
+    }
+
+    public static void nQueenHelper(char[][] board, int row, List<char[][]> answers,int N){
+        if(row == N){
+            answers.add(copyOf(board));
+            return;
+        }
+        for(int col = 0; col < N;col++){
+            board[row][col] = 'Q';
+            if(!(checkColumn(board,row,col) || checkDiagonal(board,row,col))){
+                nQueenHelper(board,row+1,answers,N);
+            }
+            board[row][col] = '.';
+        }
     }
 
 }

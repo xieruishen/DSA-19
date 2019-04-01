@@ -29,7 +29,10 @@ public class TestUtil {
         };
         Arrays.sort(A1, twoDComparator);
         Arrays.sort(A2, twoDComparator);
-        for (int i = 0; i < A1.length; i++) assertArrayEquals(A1[i], A2[i]);
+        for (int i = 0; i < A1.length; i++){
+            assertArrayEquals(A1[i], A2[i]);
+        }
+
     }
 
     public static Character[][] listToArray(List<char[]> A) {

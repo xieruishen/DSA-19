@@ -107,10 +107,10 @@ public class RangeTest {
         assertEquals(correctRange(inputs[5], 49, 56).length, rangeTree[5].rangeCount(49, 56));
     }
 
-//    @Test
-//    void testIndexRange1() {
-//        assertArrayEquals(correctRange(inputs[0], 0, 0), rangeTree[0].rangeIndex(0, 0).toArray());
-//    }
+    @Test
+    void testIndexRange1() {
+        assertArrayEquals(correctRange(inputs[0], 0, 0), rangeTree[0].rangeIndex(0, 0).toArray());
+    }
 
     @Test
     void testIndexRange2() {
