@@ -3,6 +3,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+// runtime: n! (n*n!)
+// space n
 public class Permutations {
 
     public static List<List<Integer>> permutations(List<Integer> A) {

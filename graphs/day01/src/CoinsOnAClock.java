@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+// runtime: 3^n
+// space: n
 
 public class CoinsOnAClock {
 

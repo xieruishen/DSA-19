@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+// runtime:n! (number of calls) total possible solutions each solution has n^2 cost
 public class NQueens {
 
 
