@@ -7,7 +7,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RubiksCube {
 
     private BitSet cube;
-    private HashMap<Integer, HashMap<Integer, Integer>> distances;
+
+    private int moves;
+    public double cost;
+
+    private RubiksCube prev;
+    public char prev_move;
+
 
     // initialize a solved rubiks cube
     public RubiksCube() {
@@ -15,22 +21,8 @@ public class RubiksCube {
         cube = new BitSet(24 * 5);
         for (int side = 0; side < 6; side++) {
             for (int i = 0; i < 4; i++) {
-                setColor(side * 4 + i, side * 4 + i);
+                setColor(side * 4 + i, side);
             }
-        }
-    }
-
-    public void populate_hm(){
-        {0,19,22,}
-
-        distances = new HashMap<>();
-        for(int i = 0; i < 24; i++){
-            HashMap<Integer, Integer> curr_distances = new HashMap<>()
-            for(int j = 0; j < 24;j++){
-
-            }
-        distances.put(i, curr_distances);
-
         }
     }
 
@@ -44,6 +36,13 @@ public class RubiksCube {
         cube = (BitSet) r.cube.clone();
     }
 
+
+    private RubiksCube(BitSet cube, char prev_move) {
+        this.cube = (BitSet) cube.clone();
+        this.prev_move = prev_move;
+    }
+
+
     // return true if this rubik's cube is equal to the other rubik's cube
     @Override
     public boolean equals(Object obj) {
@@ -55,12 +54,12 @@ public class RubiksCube {
 
     /**
      * return a hashCode for this rubik's cube.
-     *
+     * <p>
      * Your hashCode must follow this specification:
-     *   if A.equals(B), then A.hashCode() == B.hashCode()
-     *
+     * if A.equals(B), then A.hashCode() == B.hashCode()
+     * <p>
      * Note that this does NOT mean:
-     *   if A.hashCode() == B.hashCode(), then A.equals(B)
+     * if A.hashCode() == B.hashCode(), then A.equals(B)
      */
     @Override
     public int hashCode() {
@@ -155,6 +154,7 @@ public class RubiksCube {
                 System.out.println(c);
                 assert false;
         }
+
         // if performing a counter-clockwise rotation, swap from and to
         if (Character.isUpperCase(c)) {
             int[] temp;
@@ -165,10 +165,21 @@ public class RubiksCube {
             sidesFrom = sidesTo;
             sidesTo = temp;
         }
+
         RubiksCube res = new RubiksCube(cube);
         for (int i = 0; i < faceFrom.length; i++) res.setColor(faceTo[i], this.getColor(faceFrom[i]));
         for (int i = 0; i < sidesFrom.length; i++) res.setColor(sidesTo[i], this.getColor(sidesFrom[i]));
         return res;
+    }
+
+    public Iterable<RubiksCube> neighbors() {
+        List<RubiksCube> neighbors = new ArrayList<>();
+        char[] moves = {'u', 'U', 'r', 'R', 'f', 'F'};
+        for (char rotation : moves) {
+            RubiksCube tempcube = new RubiksCube(rotate(rotation).cube, rotation);
+            neighbors.add(tempcube);
+        }
+        return neighbors;
     }
 
     // returns a random scrambled rubik's cube by applying random rotations
@@ -176,12 +187,12 @@ public class RubiksCube {
         RubiksCube r = new RubiksCube();
         char[] listTurns = getScramble(numTurns);
         for (int i = 0; i < numTurns; i++) {
-            r= r.rotate(listTurns[i]);
+            r = r.rotate(listTurns[i]);
         }
         return r;
     }
 
-    public static char[] getScramble(int size){
+    public static char[] getScramble(int size) {
         char[] listTurns = new char[size];
         for (int i = 0; i < size; i++) {
             switch (ThreadLocalRandom.current().nextInt(0, 6)) {
@@ -208,13 +219,118 @@ public class RubiksCube {
         return listTurns;
     }
 
+    public double findCost() {
+        int g_cost = this.moves;
+        double f_cost = this.heuristic(this.cube) / 3.0;
+        double cost = g_cost + f_cost;
+        return cost;
+    }
 
+    public int heuristic(BitSet s) {
+        RubiksCube goal = new RubiksCube();
+        int count = 0;
+        for (int i = 0; i < 24 * 3; i = i + 3) {
+            if (!s.get(i, i + 3).equals(goal.cube.get(i, i + 3))) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+    public static Comparator<RubiksCube> comp = new Comparator<RubiksCube>(){
+
+        @Override
+        public int compare(RubiksCube a, RubiksCube b) {
+            if (a.cost < b.cost) {
+                return -1;
+            } else if (b.cost < a.cost) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+    };
+
+    public void updateCube(RubiksCube prev) {
+
+        this.moves = prev.moves + 1;
+        this.prev = prev;
+
+        cost = findCost();
+    }
 
 
     // return the list of rotations needed to solve a rubik's cube
     public List<Character> solve() {
-        // TODO
-        return new ArrayList<>();
+
+        RubiksCube solution_state = new RubiksCube();
+        HashMap<RubiksCube, Double> closed = new HashMap<>();
+        PriorityQueue<RubiksCube> open = new PriorityQueue<>(comp);
+        open.add(this);
+        RubiksCube current = this;
+        while (!open.isEmpty()) {
+            current = open.poll();
+
+            Iterable<RubiksCube> neighbours = current.neighbors();
+            for (RubiksCube successor : neighbours) {
+                successor.updateCube(current);
+
+                if (successor != null && successor.heuristic(successor.cube) == 0) {
+                    solution_state.moves = current.moves + 1;
+                    solution_state.prev_move = successor.prev_move;
+                    solution_state.prev = current;
+                    return get_prev_moves(solution_state);
+                }
+                boolean ignore = false;
+
+                for (RubiksCube open_state : open) {
+                    if (open_state.cube.equals(successor.cube)) {
+                        ignore = true;
+                        if (successor.cost < open_state.cost) {
+                            open_state.cost = successor.cost;
+                            open_state.moves = successor.moves;
+                            open_state.prev = current;
+                        }
+                    }
+                }
+
+
+                if (closed.containsKey(successor)) {
+                    ignore = true;
+                    if (closed.get(successor) > successor.cost) {
+                        closed.put(successor, successor.cost);
+
+                    }
+                }
+
+                if (!ignore) {
+                    successor.prev = current;
+                    open.add(successor);
+                }
+            }
+            closed.put(current, current.cost);
+        }
+        return get_prev_moves(solution_state);
+    }
+
+
+
+    private List<Character> get_prev_moves(RubiksCube solution){
+
+        LinkedList<Character> all_moves = new LinkedList<>();
+
+        RubiksCube current = solution;
+
+        while (current.moves != 0){
+            all_moves.addFirst(current.prev_move);
+            current = current.prev;
+        }
+
+        return all_moves;
+
     }
 
 }

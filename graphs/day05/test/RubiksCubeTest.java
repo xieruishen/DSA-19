@@ -114,8 +114,8 @@ public class RubiksCubeTest {
 
     @Test
     public void testSolveRandom() {
-        for (int i = 0; i < 3; i++) {
-            RubiksCube c = RubiksCube.scrambledCube(20);
+        for (int i = 0; i < 1; i++) {
+            RubiksCube c = RubiksCube.scrambledCube(10);
             RubiksCube copy = new RubiksCube(c);
             List<Character> solution = c.solve();
             System.out.println("Found solution length: " + solution.size());
