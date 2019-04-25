@@ -17,6 +17,7 @@ public class FirstFailingVersion {
             }
         }
 
+        // check if there is any bad version
         if(isBadVersion.isFailingVersion(low)) {
             return low;
         }
