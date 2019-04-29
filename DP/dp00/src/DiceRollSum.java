@@ -2,8 +2,8 @@ import java.util.HashMap;
 
 public class DiceRollSum {
 
-    // Runtime: TODO
-    // Space: TODO
+    // Runtime: n
+    // Space: n
     public static int diceRollSum(int N) {
         // TODO
         int [] DP = new int[N+1];
@@ -19,12 +19,6 @@ public class DiceRollSum {
         // base case
         if(n == 0){
             return 1;
-        }
-        if(n == 1){
-            return 1;
-        }
-        if(n == 2){
-            return 2;
         }
         // recurse relation
         int total_sum = 0;
